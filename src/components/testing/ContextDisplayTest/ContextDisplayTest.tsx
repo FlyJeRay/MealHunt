@@ -16,10 +16,7 @@ export const ContextDisplayTest = () => {
       const json: mealData = await data.json();
 
       temp_meals.push(json);
-      console.log('++');
     };
-
-    console.log(temp_meals.length);
 
     setMealsData(temp_meals);
   }
@@ -27,10 +24,8 @@ export const ContextDisplayTest = () => {
   const display = () => {
     const arr: mealData[] = mealsData;
     if (!(arr.length == 1 && arr[0].meals[0].idMeal == '-1')) {
-      console.log('rendering elements from ', arr, ' with length ', arr.length);
       const jsxarr: JSX.Element[] = [];
       arr.forEach(val => {
-        console.log(val);
         jsxarr.push(
           <div key={val.meals[0].idMeal}>
             <h4>{val.meals[0].strMeal}</h4>
@@ -45,8 +40,6 @@ export const ContextDisplayTest = () => {
     }
   }
 
-
-  console.log('render');
   return(
     <div>
       <Link to="/">main page</Link>

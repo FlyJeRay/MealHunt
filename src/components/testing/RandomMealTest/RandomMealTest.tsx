@@ -1,11 +1,9 @@
-import { useContext, useState } from 'react';
-import { MealsContext } from '../../../mealContext';
+import { useState } from 'react';
 import { mealData, mealDefaultData } from '../../../mealTypes';
 import { Link } from 'react-router-dom';
 
 export const RandomMealTest = () => {
   const [meal, setMeal] = useState<mealData>(mealDefaultData);
-  const { contextData, setContextData } = useContext(MealsContext);
 
   const pullData = async () => {
     const data: Response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
@@ -15,12 +13,23 @@ export const RandomMealTest = () => {
   }
 
   const pushData = () => {
-    setContextData([...contextData, meal.meals[0].idMeal]);
+    const datastr: string | null = localStorage.getItem('fjr_mealhunt_mealidlist');
+    const id = meal.meals[0].idMeal;
+    if (!datastr?.split(' ').includes(id)) {
+      const newdata: string = typeof datastr !== 'string' ? id + ' ' : datastr + id + ' ';
+      console.log('newdata:', newdata);
+      localStorage.setItem('fjr_mealhunt_mealidlist', newdata);
+    }
+  }
+
+  const clearData = () => {
+    localStorage.setItem('fjr_mealhunt_mealidlist', '');
   }
  
   return (
     <div>
       <Link to="/display">display</Link>
+      <button onClick={clearData}>clear</button>
       {
         meal.meals[0].idMeal !== '-1' ? 
           <div>

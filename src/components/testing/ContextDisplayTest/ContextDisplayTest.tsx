@@ -1,12 +1,17 @@
-import { useState } from "react"
+import { MutableRefObject, useEffect, useRef, useState } from "react"
 import { mealData, mealDefaultData } from "../../../mealTypes";
 import { Link } from 'react-router-dom';
 
 export const ContextDisplayTest = () => {
   const [mealsData, setMealsData] = useState<mealData[]>([mealDefaultData]);
 
+  const statusTextRef = useRef() as MutableRefObject<HTMLParagraphElement>
+
+  useEffect(() => { pullData() }, []);
+
   const pullData = async () => {
     const data: string | null = localStorage.getItem('fjr_mealhunt_mealidlist');
+    statusTextRef.current.innerHTML = 'Loading..';
 
     const ids: string[] = typeof data === 'string' ? data.split(' ') : [];
     console.log('ids:', ids);
@@ -29,8 +34,10 @@ export const ContextDisplayTest = () => {
 
   const display = () => {
     const arr: mealData[] = mealsData;
-    if (arr.length !== 0 && !(arr.length == 1 && arr[0].meals[0].idMeal == '-1')) {
+
+    if (arr.length !== 0 && !(arr.length === 1 && arr[0].meals[0].idMeal === '-1')) {
       const jsxarr: JSX.Element[] = [];
+
       arr.forEach((val, i) => {
         jsxarr.push(
           <div key={`${i}-${val.meals[0].idMeal}`}>
@@ -39,18 +46,20 @@ export const ContextDisplayTest = () => {
           </div>
         );
       })
+
+      statusTextRef.current.innerHTML = '';
       return jsxarr;
     }
     else {
-      return <p>no meals</p>
+      return <p>No Meals</p>
     }
   }
 
   return(
     <div>
-      <Link to="/">main page</Link>
+      <Link to="/">Random Meal Tab</Link>
       <button onClick={pullData}>Display Meals</button>
-
+      <p ref={statusTextRef}></p>
       <div>
         {
           display()

@@ -1,0 +1,61 @@
+.search_parameters_block, .buttons_block, .main_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Ubuntu;
+  max-width: 900px;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 16px;
+  margin: 16px auto;
+}
+
+.search_parameters_block {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.search_parameters_block .search_parameter_select {
+  width: 500px;
+}
+
+.buttons_block {
+  margin: 32px auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.buttons_block button {
+  font-family: Ubuntu;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: aliceblue;
+  width: 350px;
+  height: 50px;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.buttons_block button:hover {
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  background-color: aquamarine;
+}
+
+.main_block {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main_block .status_text {
+  font-style: italic;
+}
+/*# sourceMappingURL=RandomMealPage.css.map */

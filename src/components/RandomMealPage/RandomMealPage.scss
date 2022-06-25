@@ -1,0 +1,52 @@
+.search_parameters_block, .buttons_block, .main_block {
+  display: flex;
+
+  font-family: Ubuntu;
+
+  max-width: 900px;
+  width: 100%;
+  
+  justify-content: space-between;
+  gap: 16px;
+
+  margin: 16px auto;
+}
+
+.search_parameters_block {
+  flex-direction: row;
+
+  .search_parameter_select {
+    width: 500px;
+  }
+}
+
+.buttons_block {
+  margin: 32px auto;
+  flex-direction: row;
+
+  button {
+    font-family: Ubuntu;
+
+    border-radius: 5px;
+    border: 1px solid black;
+
+    background-color: aliceblue;
+    width: 350px;
+    height: 50px;
+
+    transition: all 0.15s;
+    &:hover {
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      background-color: aquamarine;
+    }
+  }
+}
+
+.main_block {
+  flex-direction: column;
+
+  .status_text {
+    font-style: italic;
+  }
+}

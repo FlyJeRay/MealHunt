@@ -50,3 +50,22 @@
     font-style: italic;
   }
 }
+
+.information_block {
+  background-color: #93CAED;
+  padding: 32px;
+  border-radius: 5px;
+  border: none;
+
+  .meal_title {
+    font-size: 32px;
+    margin: 0;
+  }
+
+  .meal_subtitle {
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 6px;
+    margin-bottom: 30px;
+  }
+}

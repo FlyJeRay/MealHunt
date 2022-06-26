@@ -1,0 +1,70 @@
+.header_background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f0f0f0;
+}
+
+.header_background .header_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.header_background .header_box .header_title, .header_background .header_box .header_link, .header_background .header_box .header_active_link {
+  font-family: Ubuntu;
+}
+
+.header_background .header_box .header_title {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.header_background .header_box .header_linkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 16px;
+}
+
+.header_background .header_box .header_linkbox .header_link, .header_background .header_box .header_linkbox .header_active_link {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header_background .header_box .header_linkbox .header_link {
+  color: black;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.header_background .header_box .header_linkbox .header_link:hover {
+  color: #138dda;
+  letter-spacing: 0.5px;
+}
+
+.header_background .header_box .header_linkbox .header_active_link {
+  color: #138dda;
+  letter-spacing: 0.5px;
+}
+/*# sourceMappingURL=PageHeader.css.map */

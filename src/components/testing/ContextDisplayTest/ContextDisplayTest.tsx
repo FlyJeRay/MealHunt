@@ -57,7 +57,6 @@ export const ContextDisplayTest = () => {
 
   return(
     <div>
-      <Link to="/">Random Meal Tab</Link>
       <button onClick={pullData}>Display Meals</button>
       <p ref={statusTextRef}></p>
       <div>

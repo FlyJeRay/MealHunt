@@ -45,7 +45,7 @@
 .buttons_block button:hover {
   letter-spacing: 0.5px;
   cursor: pointer;
-  background-color: aquamarine;
+  background-color: #4abaff;
 }
 
 .main_block {
@@ -60,7 +60,7 @@
 }
 
 .information_block {
-  background-color: #93CAED;
+  background-color: #f0f0f0;
   padding: 32px;
   border-radius: 5px;
   border: none;

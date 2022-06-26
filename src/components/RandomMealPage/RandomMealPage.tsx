@@ -234,11 +234,10 @@ export const RandomMealPage = () => {
  
   return (
     <div>
-      <Link to="/display">Display Tab</Link>
       <div className='search_parameters_block'>
-        <Select className='search_parameter_select' options={categoriesOptions} onChange={(event) => setSelectedCategory(event ? event.value : '')} placeholder='Select Meal Category' />
-        <Select className='search_parameter_select' options={areasOptions} onChange={(event) => setSelectedArea(event ? event.value : '')} placeholder='Select Meal Area' />
-        <Select className='search_parameter_select' options={ingredientsOptions} onChange={(event) => setSelectedIngredient(event ? event.value : '')} placeholder='Select Main Ingredient' />
+        <Select defaultValue={{value: '', label: 'ANY CATEGORY'}} className='search_parameter_select' options={categoriesOptions} onChange={(event) => setSelectedCategory(event ? event.value : '')} placeholder='Select Meal Category' />
+        <Select defaultValue={{value: '', label: 'ANY AREA'}} className='search_parameter_select' options={areasOptions} onChange={(event) => setSelectedArea(event ? event.value : '')} placeholder='Select Meal Area' />
+        <Select defaultValue={{value: '', label: 'ANY MAIN INGREDIENT'}} className='search_parameter_select' options={ingredientsOptions} onChange={(event) => setSelectedIngredient(event ? event.value : '')} placeholder='Select Main Ingredient' />
       </div>
       <div className='main_block'>
         { statusText !== '' ? <p className='status_text'>{statusText}</p> : null }

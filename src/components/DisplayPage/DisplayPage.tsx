@@ -39,7 +39,6 @@ export const DisplayPage = () => {
     const data: string | null = localStorage.getItem('fjr_mealhunt_mealidlist');
 
     const ids: string[] = typeof data === 'string' ? data.split(' ') : [];
-    console.log('ids:', ids);
 
     const temp_meals: mealData[] = [];
 

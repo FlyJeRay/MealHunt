@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { RandomMealPage } from '../RandomMealPage/RandomMealPage';
 import { PageHeader } from '../Header/PageHeader';
-import { DisplayPage } from './DisplayPage/DisplayPage';
+import { DisplayPage } from '../DisplayPage/DisplayPage';
 
 function App() {
   return (

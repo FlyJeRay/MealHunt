@@ -1,6 +1,41 @@
+@keyframes slideFromBottom {
+  0% {
+    opacity: 0%;
+    transform: translateY(+200%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+.search_parameters_block {
+  display: flex;
+
+  font-family: Ubuntu;
+
+  max-width: 900px;
+  width: 100%;
+  
+  justify-content: space-between;
+  gap: 16px;
+
+  margin: 16px auto;
+}
+
+.search_parameters_block {
+  flex-direction: row;
+
+  .search_parameter_select {
+    width: 500px;
+  }
+}
+
 .meal_list_block {
   display: flex;
   flex-direction: column;
+
+  animation: 1s slideFromBottom ease-out;
 
   max-width: 900px;
   width: 100%;

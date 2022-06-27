@@ -1,3 +1,34 @@
+@-webkit-keyframes slideFromBottom {
+  0% {
+    opacity: 0%;
+    -webkit-transform: translateY(200%);
+            transform: translateY(200%);
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideFromBottom {
+  0% {
+    opacity: 0%;
+    -webkit-transform: translateY(200%);
+            transform: translateY(200%);
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.meal_page {
+  -webkit-animation: 1s slideFromBottom ease-out;
+          animation: 1s slideFromBottom ease-out;
+}
+
 .search_parameters_block, .buttons_block, .main_block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,8 +54,11 @@
   width: 500px;
 }
 
+.search_parameters_block .search_parameter_select:hover {
+  cursor: pointer;
+}
+
 .buttons_block {
-  margin: 32px auto;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;

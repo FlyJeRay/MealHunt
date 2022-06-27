@@ -1,4 +1,4 @@
-import { singleMealData } from "../mealTypes";
+import { singleMealData } from "./mealTypes";
 
 // I wanted to parse it with a loop, but, sadly, JS doesn't allow to use 
 // checkedMeal[`strMeasure${i}`] and checkedMeal[`strIngredient${i}`]: it is required to have

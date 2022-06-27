@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { mealAreas, mealCategories, mealData, mealDefaultData, mealIngredients, shortMealData, singleMealData } from '../../mealTypes';
+import { mealData, mealDefaultData, shortMealData, singleMealData } from '../../mealTypes';
 import Select from 'react-select';
 
 import './RandomMealPage.css'
-import { parseIngredients } from '../IngredientsParser';
+import { parseIngredients } from '../../IngredientsParser';
+import { rso_pullAreas, rso_pullCategories, rso_pullMainIngredients } from '../../ReactSelectOptions';
 
 type selectOptions = [ { value: string, label: string } ]
 
@@ -25,43 +26,21 @@ export const RandomMealPage = () => {
   const [selectedArea, setSelectedArea] = useState<string>('');
   const [selectedIngredient, setSelectedIngredient] = useState<string>('');
 
-  useEffect(() => { 
-    pullCategories();
-    pullAreas();
-    pullMainIngredients();
+  useEffect(() => {
+    pullOptions();
   }, []);
 
-  const pullCategories = async () => {
-    const categoriesData: Response = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?c=list');
-    const categoriesJSON: mealCategories = await categoriesData.json();
+  const pullOptions = async() => {
+    // Using functions that are exported from src/ReactSelectOptions.ts
+    // They are also used in src/components/DisplayPage/DisplayPage.tsx
+    const categories: selectOptions = await rso_pullCategories();
+    setCategoriesOptions(categories);
 
-    const tempCategories: selectOptions = [ { value: '', label: 'ANY CATEGORY' } ];
-    categoriesJSON.meals.forEach(val => {
-      tempCategories.push( { value: val.strCategory, label: val.strCategory.toUpperCase() } );
-    });
-    setCategoriesOptions(tempCategories);
-  }
+    const areas: selectOptions = await rso_pullAreas();
+    setAreasOptions(areas);
 
-  const pullAreas = async () => {
-    const areasData: Response = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
-    const areasJSON: mealAreas = await areasData.json();
-
-    const tempAreas: selectOptions = [ { value: '', label: 'ANY AREA' } ];
-    areasJSON.meals.forEach(val => {
-      tempAreas.push( { value: val.strArea, label: val.strArea.toUpperCase() } );
-    });
-    setAreasOptions(tempAreas);
-  }
-
-  const pullMainIngredients = async () => {
-    const ingredientsData: Response = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
-    const ingredientsJSON: mealIngredients = await ingredientsData.json();
-
-    const tempIngredients: selectOptions = [ { value: '', label: 'ANY MAIN INGREDIENT' } ];
-    ingredientsJSON.meals.forEach(val => {
-      tempIngredients.push( { value: val.strIngredient, label: val.strIngredient.toUpperCase() } );
-    });
-    setIngredientsOptions(tempIngredients);
+    const ingredients: selectOptions = await rso_pullMainIngredients();
+    setIngredientsOptions(ingredients);
   }
 
   const pullData = async () => {
@@ -211,12 +190,14 @@ export const RandomMealPage = () => {
         <Select defaultValue={{value: '', label: 'ANY AREA'}} className='search_parameter_select' options={areasOptions} onChange={(event) => setSelectedArea(event ? event.value : '')} placeholder='Select Meal Area' />
         <Select defaultValue={{value: '', label: 'ANY MAIN INGREDIENT'}} className='search_parameter_select' options={ingredientsOptions} onChange={(event) => setSelectedIngredient(event ? event.value : '')} placeholder='Select Main Ingredient' />
       </div>
-      <div className='main_block'>
-        { statusText !== '' ? <p className='status_text'>{statusText}</p> : null }
-        { statusText === '' ? displayPulledMeal() : null }
-      </div>
-      <div>
-        { displayButtons() }
+      <div className='meal_page'>
+        <div>
+          { displayButtons() }
+        </div>
+        <div className='main_block'>
+          { statusText !== '' ? <p className='status_text'>{statusText}</p> : null }
+          { statusText === '' ? displayPulledMeal() : null }
+        </div>
       </div>
     </div>
   )

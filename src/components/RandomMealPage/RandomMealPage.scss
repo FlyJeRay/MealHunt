@@ -1,3 +1,18 @@
+@keyframes slideFromBottom {
+  0% {
+    opacity: 0%;
+    transform: translateY(+200%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+.meal_page {
+  animation: 1s slideFromBottom ease-out;
+}
+
 .search_parameters_block, .buttons_block, .main_block {
   display: flex;
 
@@ -21,7 +36,6 @@
 }
 
 .buttons_block {
-  margin: 32px auto;
   flex-direction: row;
 
   button {

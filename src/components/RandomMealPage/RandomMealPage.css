@@ -77,4 +77,12 @@
   margin-top: 6px;
   margin-bottom: 30px;
 }
+
+.information_block .meal_yt_link {
+  font-family: Ubuntu;
+  display: block;
+  color: red;
+  text-decoration: underline;
+  font-size: 15px;
+}
 /*# sourceMappingURL=RandomMealPage.css.map */

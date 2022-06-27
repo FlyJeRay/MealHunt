@@ -1,0 +1,104 @@
+.meal_list_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 900px;
+  width: 100%;
+  margin: 16px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+}
+
+.meal_list_block .single_meal_block {
+  background-color: white;
+  width: 100%;
+  max-height: 75px;
+  padding: 16px;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+.meal_list_block .single_meal_block .meal_title, .meal_list_block .single_meal_block .meal_subtitle {
+  font-family: Ubuntu;
+}
+
+.meal_list_block .single_meal_block .meal_title {
+  margin-top: 6px;
+  margin-bottom: 3px;
+  font-size: 20px;
+}
+
+.meal_list_block .single_meal_block .meal_subtitle {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-style: italic;
+}
+
+.meal_list_block .single_meal_block .meal_info_hidden {
+  font-family: Ubuntu;
+  -webkit-transition: 0.15s all ease-out;
+  transition: 0.15s all ease-out;
+  opacity: 0%;
+  pointer-events: none;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.meal_list_block .single_meal_block:hover {
+  cursor: pointer;
+}
+
+.meal_list_block .single_meal_block:focus-within {
+  max-height: 1000px;
+}
+
+.meal_list_block .single_meal_block:focus-within .meal_info_hidden {
+  opacity: 100%;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.meal_list_block .single_meal_block .remove_button {
+  font-family: Ubuntu;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: aliceblue;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.meal_list_block .single_meal_block .remove_button:hover {
+  cursor: pointer;
+  background-color: #4abaff;
+}
+
+.meal_list_block .single_meal_block .meal_yt_link {
+  font-family: Ubuntu;
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  color: red;
+  text-decoration: underline;
+  font-size: 15px;
+}
+
+.no_meals_text {
+  display: block;
+  text-align: center;
+  font-family: Ubuntu;
+  font-style: italic;
+  color: black;
+}
+/*# sourceMappingURL=DisplayPage.css.map */

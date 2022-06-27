@@ -12,8 +12,8 @@ function App() {
       <div className="App">
         <PageHeader/>
         <Routes>
-            <Route path='/' element={<RandomMealPage/>} />
-            <Route path='/mylist' element={<DisplayPage/>} />
+            <Route path='/MealHunt/' element={<RandomMealPage/>} />
+            <Route path='/MealHunt/mylist' element={<DisplayPage/>} />
         </Routes>
       </div>
     </Router>

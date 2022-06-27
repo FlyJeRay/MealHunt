@@ -6,10 +6,10 @@ export const PageHeader = () => {
   return (
     <div className="header_background">
       <div className="header_box">
-        <h3 className="header_title">MealHunt</h3>
+        <p className="header_title">MealHunt</p>
         <div className="header_linkbox">
-          <NavLink className={({isActive}) => (isActive ? 'header_active_link' : 'header_link')} to={'/'}>Random Meal</NavLink>
-          <NavLink className={({isActive}) => (isActive ? 'header_active_link' : 'header_link')} to={'/mylist'}>My List</NavLink>
+          <NavLink className={({isActive}) => (isActive ? 'header_active_link' : 'header_link')} to={'/MealHunt/'}>Random Meal</NavLink>
+          <NavLink className={({isActive}) => (isActive ? 'header_active_link' : 'header_link')} to={'/MealHunt/mylist'}>My List</NavLink>
         </div>
       </div>
     </div>

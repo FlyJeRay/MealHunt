@@ -119,10 +119,10 @@ export const DisplayPage = () => {
 
   return(
     <div>
-      <div className="search_parameters_block">
-        <Select defaultValue={{value: '', label: 'ANY CATEGORY'}} className='search_parameter_select' options={categoriesOptions} onChange={(event) => setSelectedCategory(event ? event.value : '')} placeholder='Select Meal Category' />
-        <Select defaultValue={{value: '', label: 'ANY AREA'}} className='search_parameter_select' options={areasOptions} onChange={(event) => setSelectedArea(event ? event.value : '')} placeholder='Select Meal Area' />
-        <Select defaultValue={{value: '', label: 'ANY MAIN INGREDIENT'}} className='search_parameter_select' options={ingredientsOptions} onChange={(event) => setSelectedIngredient(event ? event.value : '')} placeholder='Select Main Ingredient' /></div>
+      <div className="displaypage_search_parameters_block">
+        <Select defaultValue={{value: '', label: 'ANY CATEGORY'}} className='displaypage_search_parameter_select' options={categoriesOptions} onChange={(event) => setSelectedCategory(event ? event.value : '')} placeholder='Select Meal Category' />
+        <Select defaultValue={{value: '', label: 'ANY AREA'}} className='displaypage_search_parameter_select' options={areasOptions} onChange={(event) => setSelectedArea(event ? event.value : '')} placeholder='Select Meal Area' />
+        <Select defaultValue={{value: '', label: 'ANY MAIN INGREDIENT'}} className='displaypage_search_parameter_select' options={ingredientsOptions} onChange={(event) => setSelectedIngredient(event ? event.value : '')} placeholder='Select Main Ingredient' /></div>
       <div>
         {
           display()

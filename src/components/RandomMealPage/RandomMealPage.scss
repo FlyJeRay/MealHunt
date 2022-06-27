@@ -13,7 +13,7 @@
   animation: 1s slideFromBottom ease-out;
 }
 
-.search_parameters_block, .buttons_block, .main_block {
+.mealpage_search_parameters_block, .buttons_block, .main_block {
   display: flex;
 
   font-family: Ubuntu;
@@ -27,10 +27,10 @@
   margin: 16px auto;
 }
 
-.search_parameters_block {
+.mealpage_search_parameters_block {
   flex-direction: row;
 
-  .search_parameter_select {
+  .mealpage_search_parameter_select {
     width: 500px;
   }
 }
@@ -89,5 +89,33 @@
     color: red;
     text-decoration: underline;
     font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .mealpage_search_parameters_block {
+    width: 90%;
+  }
+
+  .buttons_block {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .mealpage_search_parameters_block {
+    flex-direction: column;
+
+    align-items: center;
+    width: 100%;
+
+    .mealpage_search_parameter_select {
+      width: 90%;
+    }
+  }
+
+  .buttons_block {
+    flex-direction: column;
+    align-items: center;
   }
 }

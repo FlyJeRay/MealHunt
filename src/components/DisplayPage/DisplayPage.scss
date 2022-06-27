@@ -9,7 +9,7 @@
   }
 }
 
-.search_parameters_block {
+.displaypage_search_parameters_block {
   display: flex;
 
   font-family: Ubuntu;
@@ -23,10 +23,10 @@
   margin: 16px auto;
 }
 
-.search_parameters_block {
+.displaypage_search_parameters_block {
   flex-direction: row;
 
-  .search_parameter_select {
+  .displaypage_search_parameter_select {
     width: 500px;
   }
 }
@@ -83,7 +83,7 @@
     }
 
     &:focus-within {
-      max-height: 1000px;
+      max-height: 1200px;
       .meal_info_hidden {
         opacity: 100%;
         pointer-events: all;
@@ -127,4 +127,26 @@
   font-family: Ubuntu;
   font-style: italic;
   color: black;
+}
+
+@media screen and (max-width: 900px) {
+  .displaypage_search_parameters_block {
+    width: 90%;
+  }
+
+  .meal_list_block {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .displaypage_search_parameters_block {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .displaypage_search_parameter_select {
+      width: 90%;
+    }
+  }
 }

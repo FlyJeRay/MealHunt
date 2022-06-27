@@ -24,7 +24,7 @@
   }
 }
 
-.search_parameters_block {
+.displaypage_search_parameters_block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,14 +38,14 @@
   margin: 16px auto;
 }
 
-.search_parameters_block {
+.displaypage_search_parameters_block {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
 }
 
-.search_parameters_block .search_parameter_select {
+.displaypage_search_parameters_block .displaypage_search_parameter_select {
   width: 500px;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .meal_list_block .single_meal_block:focus-within {
-  max-height: 1000px;
+  max-height: 1200px;
 }
 
 .meal_list_block .single_meal_block:focus-within .meal_info_hidden {
@@ -153,5 +153,30 @@
   font-family: Ubuntu;
   font-style: italic;
   color: black;
+}
+
+@media screen and (max-width: 900px) {
+  .displaypage_search_parameters_block {
+    width: 90%;
+  }
+  .meal_list_block {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .displaypage_search_parameters_block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .displaypage_search_parameters_block .displaypage_search_parameter_select {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=DisplayPage.css.map */

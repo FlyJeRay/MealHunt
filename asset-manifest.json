@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MealHunt/static/css/main.61e740ee.css",
+    "main.js": "/MealHunt/static/js/main.e9cd6528.js",
+    "index.html": "/MealHunt/index.html",
+    "main.61e740ee.css.map": "/MealHunt/static/css/main.61e740ee.css.map",
+    "main.e9cd6528.js.map": "/MealHunt/static/js/main.e9cd6528.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61e740ee.css",
+    "static/js/main.e9cd6528.js"
+  ]
+}
